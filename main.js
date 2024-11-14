@@ -1,12 +1,25 @@
-// Smooth scrolling for navigation links
+// Define the offset in pixels (e.g., 60 for a 60px header)
+const offset = 60;
+
+// Smooth scrolling with offset for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        // Calculate the position with the offset
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+
+        // Scroll to the position with offset
+        window.scrollTo({
+            top: offsetPosition,
             behavior: "smooth"
         });
     });
 });
+
 
 // Dark mode toggle with icon change and transition
 document.getElementById("toggle-dark-mode").addEventListener("click", () => {
