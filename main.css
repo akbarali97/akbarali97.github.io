@@ -151,3 +151,35 @@ body.dark-mode .tag:hover {
     background-color: #58a6ff;
     color: #0d1117;
 }
+/* Unordered List Styling */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #24292e;
+}
+
+/* Custom Bullet Icon */
+ul li::before {
+    content: '•'; /* Can also use custom icons here */
+    position: absolute;
+    left: 0;
+    color: #0366d6; /* Bullet color */
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+body.dark-mode ul li {
+    color: #c9d1d9;
+}
+
+body.dark-mode ul li::before {
+    color: #58a6ff;
+}
