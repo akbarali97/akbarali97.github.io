@@ -51,18 +51,20 @@
         </div>
     </header>
 
-    <section id="about" class="container my-1 pt-5 mt-5">
-        <h2>About Me</h2>
-        <div class="d-flex justify-content-center align-items-stretch">
+    <section id="about" class="container my-5 pt-5">
+        <h2 class="text-center text-md-start">About Me</h2>
+        <div class="row align-items-center mt-4">
             <!-- Profile Picture Placeholder -->
-            <div class="profile-container w-25">
-                <!-- Front Image -->
-                <img src="assets/profile_img/my-profile-1.jpg" alt="Profile Picture 1" class="profile-picture front-image">
-                
-                <!-- Back Image -->
-                <img src="assets/profile_img/my-profile-2.jpeg" alt="Profile Picture 2" class="profile-picture back-image">
+            <div class="col-12 col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+                <div class="profile-container position-relative" style="width: 100%; max-width: 250px; aspect-ratio: 1;">
+                    <!-- Front Image -->
+                    <img src="assets/profile_img/my-profile-1.jpg" alt="Profile Picture 1" class="profile-picture front-image w-100 h-100 position-absolute">
+    
+                    <!-- Back Image -->
+                    <img src="assets/profile_img/my-profile-2.jpeg" alt="Profile Picture 2" class="profile-picture back-image w-100 h-100 position-absolute">
+                </div>
             </div>           
-            <div class="about-content w-75 ms-4">
+            <div class="col-12 col-md-8">
                 <p>
                     I am a passionate and driven Software Development Engineer with over 4.5 years of hands-on experience 
                     in building robust, scalable solutions across ERP, CRM, e-commerce platforms, and web applications for large-scale 
