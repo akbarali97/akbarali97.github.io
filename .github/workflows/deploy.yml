@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your deployment branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Add cache-busting parameter
+      run: |
+        TIMESTAMP=$(date +%s)
+        sed -i "s/main.css/main.css?v=$TIMESTAMP/g" index.html
+        sed -i "s/main.js/main.js?v=$TIMESTAMP/g" index.html
