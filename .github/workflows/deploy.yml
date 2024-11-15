@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages with Cache Busting
+
+on:
+  push:
+    branches:
+      - main  # Replace with your deployment branch if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Adjust to the Node version you need
+
+    - name: Generate timestamp and rename files
+      run: |
+        TIMESTAMP=$(date +%s)
+        
+        # Rename CSS and JS files with timestamp
+        mv main.css $TIMESTAMP.css
+        mv main.js $TIMESTAMP.js
+        
+        # Update references in index.html
+        sed -i "s/main\.css/$TIMESTAMP.css/g" index.html
+        sed -i "s/main\.js/$TIMESTAMP.js/g" index.html
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Adjust to your build directory if necessary
