@@ -21,19 +21,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// Dark mode toggle with icon change and transition
-document.getElementById("toggle-dark-mode").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const icon = document.getElementById("toggle-icon");
-    icon.textContent = document.body.classList.contains("dark-mode") ?"🌞" : "🌙";
+// Dark mode with persistence across pages (via localStorage)
+function applyTheme(dark) {
+    document.body.classList.toggle("dark-mode", dark);
 
-    // Toggle header classes based on dark mode
+    const icon = document.getElementById("toggle-icon");
+    if (icon) icon.textContent = dark ? "🌞" : "🌙";
+
     const header = document.querySelector("header");
-    if (document.body.classList.contains("dark-mode")) {
-        header.classList.remove("navbar-light", "bg-light");
-        header.classList.add("navbar-dark", "bg-dark");
-    } else {
-        header.classList.remove("navbar-dark", "bg-dark");
-        header.classList.add("navbar-light", "bg-light");
+    if (header) {
+        header.classList.toggle("navbar-dark", dark);
+        header.classList.toggle("bg-dark", dark);
+        header.classList.toggle("navbar-light", !dark);
+        header.classList.toggle("bg-light", !dark);
     }
-});
+}
+
+// Apply the saved preference on load
+applyTheme(localStorage.getItem("theme") === "dark");
+
+const darkToggle = document.getElementById("toggle-dark-mode");
+if (darkToggle) {
+    darkToggle.addEventListener("click", () => {
+        const dark = !document.body.classList.contains("dark-mode");
+        applyTheme(dark);
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    });
+}
