@@ -561,6 +561,114 @@ body.dark-mode .estimate-icon {
     color: #3fb950;
 }
 
+/* ===== How I Work (process) ===== */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.process-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border: 1px solid #d1d5da;
+    border-radius: 10px;
+    background-color: #f6f8fa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-step:hover {
+    border-color: #0366d6;
+    box-shadow: 0 6px 18px rgba(27, 31, 35, 0.06);
+}
+
+body.dark-mode .process-step {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+body.dark-mode .process-step:hover {
+    border-color: #58a6ff;
+}
+
+.process-num {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: #0366d6;
+    color: #ffffff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode .process-num {
+    background-color: #58a6ff;
+    color: #0d1117;
+}
+
+.process-body h6 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.process-body p {
+    font-size: 0.92rem;
+    color: #586069;
+    margin: 0;
+}
+
+body.dark-mode .process-body p {
+    color: #8b949e;
+}
+
+/* ===== FAQ accordion (dark-mode aware) ===== */
+.faq-accordion .accordion-button {
+    font-weight: 600;
+}
+
+body.dark-mode .faq-accordion .accordion-item {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+body.dark-mode .faq-accordion .accordion-button {
+    background-color: #161b22;
+    color: #c9d1d9;
+}
+
+body.dark-mode .faq-accordion .accordion-button:not(.collapsed) {
+    background-color: #15324f;
+    color: #58a6ff;
+    box-shadow: none;
+}
+
+body.dark-mode .faq-accordion .accordion-button::after {
+    filter: invert(1) grayscale(1) brightness(1.6);
+}
+
+body.dark-mode .faq-accordion .accordion-body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+.faq-accordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(3, 102, 214, 0.2);
+}
+
+.faq-accordion .accordion-body a {
+    color: #0366d6;
+}
+
+body.dark-mode .faq-accordion .accordion-body a {
+    color: #58a6ff;
+}
+
 body.dark-mode .service-price {
     color: #8b949e;
 }
