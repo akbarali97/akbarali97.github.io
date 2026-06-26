@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
         if (window.turnstile) window.turnstile.reset();
       } else {
-        result.textContent = data.message || "Something went wrong. Please email me directly at akkuakbar97@gmail.com.";
+        result.textContent = data.message || "Something went wrong. Please email me directly at hello@akbarali.dev.";
         result.className = "text-center mt-3 qf-error";
       }
     } catch (err) {
-      result.textContent = "Network error. Please email me directly at akkuakbar97@gmail.com.";
+      result.textContent = "Network error. Please email me directly at hello@akbarali.dev.";
       result.className = "text-center mt-3 qf-error";
     } finally {
       submitBtn.disabled = false;
