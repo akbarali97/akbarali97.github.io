@@ -279,9 +279,58 @@
             </div>
         </div>
 
-        <div class="services-cta text-center mt-4">
-            <p class="mb-3">Not sure which package fits? Tell me about your project and I&rsquo;ll send a tailored quote.</p>
-            <a href="mailto:akkuakbar97@gmail.com" class="btn btn-primary"><i class="fas fa-envelope me-2"></i>Get a Free Quote</a>
+        <div class="services-cta mt-5">
+            <h3 class="text-center mb-2">Get a Free Quote</h3>
+            <p class="text-center mb-4">Tell me about your project and I&rsquo;ll get back to you with a tailored quote.</p>
+
+            <form id="quote-form" class="quote-form mx-auto">
+                <!-- Web3Forms access key (free) — replace before going live -->
+                <input type="hidden" name="access_key" value="f3dc0d17-9c43-44f5-847a-00f79b23103b">
+                <input type="hidden" name="subject" value="New project enquiry from portfolio">
+                <input type="hidden" name="from_name" value="Portfolio Website">
+                <!-- Honeypot anti-spam field (kept off-screen) -->
+                <input type="checkbox" name="botcheck" class="d-none" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="qf-name">Name</label>
+                        <input type="text" class="form-control" id="qf-name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="qf-email">Email</label>
+                        <input type="email" class="form-control" id="qf-email" name="email" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="qf-service">Service you&rsquo;re interested in</label>
+                        <select class="form-select" id="qf-service" name="service">
+                            <option>Static Landing Page</option>
+                            <option>Multi-page Business Website</option>
+                            <option>E-commerce Store</option>
+                            <option>Custom Web App Development</option>
+                            <option>Odoo / ERP Development</option>
+                            <option>Web Scraping &amp; Automation</option>
+                            <option>Cloud Deployment &amp; DevOps</option>
+                            <option>Dashboards &amp; Data Analytics</option>
+                            <option>Website Maintenance &amp; Support</option>
+                            <option>Mobile App (Flutter)</option>
+                            <option>Other / Not sure</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="qf-message">Project details</label>
+                        <textarea class="form-control" id="qf-message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADrbTy1MLUAFQyNn"></div>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Send Enquiry</button>
+                        <a href="https://wa.me/971527468099" target="_blank" rel="noopener" class="btn btn-whatsapp ms-2"><i class="fab fa-whatsapp me-2"></i>WhatsApp</a>
+                    </div>
+                </div>
+                <div id="qf-result" class="text-center mt-3" role="status" aria-live="polite"></div>
+            </form>
         </div>
     </section>
 
@@ -549,6 +598,10 @@
     <script src="main.js"></script>
     <script src="compatibility_checker.js"></script>
     <script src="services.js"></script>
+    <script src="contact.js"></script>
+
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bf5b749bc35945eab6b6ae0be4271a56"}'></script>

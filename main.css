@@ -338,6 +338,67 @@ body.dark-mode .service-whatsapp:hover {
     color: #4ae585;
 }
 
+/* Quote / contact form */
+.quote-form {
+    max-width: 640px;
+}
+
+.quote-form .form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+body.dark-mode .quote-form .form-control,
+body.dark-mode .quote-form .form-select {
+    background-color: #0d1117;
+    border-color: #30363d;
+    color: #c9d1d9;
+}
+
+body.dark-mode .quote-form .form-control::placeholder {
+    color: #6e7681;
+}
+
+body.dark-mode .quote-form .form-control:focus,
+body.dark-mode .quote-form .form-select:focus {
+    background-color: #0d1117;
+    border-color: #58a6ff;
+    color: #c9d1d9;
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+    background-color: #25d366;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    color: #ffffff;
+}
+
+/* Form result messages */
+.qf-success {
+    color: #1a7f37;
+    font-weight: 600;
+}
+
+.qf-error {
+    color: #cf222e;
+    font-weight: 600;
+}
+
+body.dark-mode .qf-success {
+    color: #3fb950;
+}
+
+body.dark-mode .qf-error {
+    color: #f85149;
+}
+
 body.dark-mode .service-price {
     color: #8b949e;
 }
