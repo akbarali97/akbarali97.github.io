@@ -192,6 +192,160 @@ section h2 {
     text-align: left; /* Ensure alignment with other sections */
 }
 
+/* Services Section */
+.services-intro {
+    color: #586069;
+    max-width: 760px;
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode .services-intro {
+    color: #8b949e;
+}
+
+.services-intro a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+body.dark-mode .services-intro a {
+    color: #58a6ff;
+}
+
+/* Currency switcher */
+.currency-label {
+    font-size: 0.9rem;
+    color: #586069;
+}
+
+body.dark-mode .currency-label {
+    color: #8b949e;
+}
+
+.currency-select {
+    background-color: #ffffff;
+    border: 1px solid #d1d5da;
+    color: #24292e;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.currency-select:focus {
+    outline: none;
+    border-color: #0366d6;
+    box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.25);
+}
+
+body.dark-mode .currency-select {
+    background-color: #0d1117;
+    border-color: #30363d;
+    color: #c9d1d9;
+}
+
+body.dark-mode .currency-select:focus {
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.25);
+}
+
+/* Service cards */
+.service-card {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(27, 31, 35, 0.08);
+    border-color: #0366d6;
+}
+
+body.dark-mode .service-card {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+body.dark-mode .service-card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+    font-size: 1.8rem;
+    color: #0366d6;
+}
+
+body.dark-mode .service-icon {
+    color: #58a6ff;
+}
+
+.service-card h5 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.service-desc {
+    color: #586069;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+body.dark-mode .service-desc {
+    color: #8b949e;
+}
+
+.service-price {
+    font-size: 0.95rem;
+    color: #586069;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.service-price .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0366d6;
+}
+
+.service-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #25d366;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-whatsapp i {
+    font-size: 1.15rem;
+}
+
+.service-whatsapp:hover {
+    color: #1da851;
+    text-decoration: underline;
+}
+
+body.dark-mode .service-whatsapp {
+    color: #25d366;
+}
+
+body.dark-mode .service-whatsapp:hover {
+    color: #4ae585;
+}
+
+body.dark-mode .service-price {
+    color: #8b949e;
+}
+
+body.dark-mode .service-price .price {
+    color: #58a6ff;
+}
+
 /* Profile Container Styling */
 .profile-container {
     perspective: 1000px; /* Adds depth for 3D effect */
@@ -262,5 +416,69 @@ section h2 {
     #about h2 {
         text-align: center;
         margin-bottom: 1rem;
+    }
+}
+
+/* Add print styles to optimize printing */
+@media print {
+    /* Set a white background for the body */
+    body {
+        background: #fff;
+        color: #000;
+        font-family: 'Arial', sans-serif; /* Standard font for print */
+        margin: 0; /* Remove body margins */
+        padding: 0;
+    }
+
+    /* Hide navigation, buttons, footer, and images */
+    header, footer, #toggle-dark-mode, .icon-links, img,
+    .currency-switch, .services-cta {
+        display: none !important;
+    }
+
+    /* Remove empty spaces left by hidden images */
+    .profile-container, .project img, .image-container {
+        display: none !important;
+    }
+
+    /* Reduce section margins for compact layout */
+    section {
+        page-break-inside: avoid;
+        margin: 1.5cm 1cm;
+        padding: 0.5cm 0; /* Reduce section padding */
+    }
+
+    /* Enhance readability of headings and text */
+    section h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 0.5cm;
+    }
+
+    section p, ul li {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 0.5cm; /* Reduce spacing between paragraphs */
+    }
+
+    ul {
+        padding-left: 1cm; /* Keep lists aligned neatly */
+    }
+
+    /* Remove hover and interactive styles */
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: inherit;
+    }
+
+    /* Compact layout for project sections */
+    .project {
+        border: 1px solid #ccc;
+        padding: 0.5cm;
+        margin-bottom: 1cm;
     }
 }
